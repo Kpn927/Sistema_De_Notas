@@ -11,5 +11,6 @@ using namespace std;
 int main ()
 {
     llenado_vector();
-    promedioefis();
+    top10matsort(arr, 0, alma);
+    mostrartop10mat();
 }

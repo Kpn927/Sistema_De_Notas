@@ -32,7 +32,7 @@ string line;
 unsigned int alma;
 
 // Funciones //
-unsigned int counterA, counterB;
+unsigned int counterA, counterB, counterC;
 
 void llenado_vector() 
 {
@@ -576,18 +576,302 @@ void promediobio()
 
     cout << "Promedio en biologia es: " << result;
 }
+////////////////////////////////
+//////////////TOP10/////////////
+////////////////////////////////
 
+///////////////MATEMATICA////////////////
+int top10mat(vector<Notas> &arr, int low, int high)
+{
+    int pivote = arr[high].matematica;
+    int i = low - 1;
+    int j = low;
+
+    for (j; j <= high - 1; j++)
+    {
+        if (arr[j].matematica <= pivote)
+        {
+            i++;
+            swap (arr[i], arr[j]);
+        }
+    }
+
+    swap (arr[i+1], arr[j]);
+
+    return (i+1);
+}
+
+void top10matsort(vector<Notas> &arr, int low, int high)
+{
+    if (low < high)
+    {
+        int pi = top10mat(arr, low, high);
+
+        top10matsort(arr, low, pi - 1);
+        top10matsort(arr, pi + 1, high);
+    }
+}
+
+void mostrartop10mat(){
+    counterC++;
+    cout << "</TOP 10 en Matematica\\>\n";
+    for (int i = alma; alma-10 < i; i--)
+    {
+        cout << "\nTOP: " << counterC++;
+        cout << "\nNombre: "<< arr[i].nombre << endl;
+        cout << "Apellido: " << arr[i].apellido << endl;
+        cout << "Email: " <<arr[i].email << endl;
+        cout << "Genero: " <<arr[i].sexo << endl;
+        cout << "Nota: " << arr[i].matematica << endl;
+    }
+    counterC = 0;
+}
+
+///////////////Fisica////////////////
+int top10fis(vector<Notas> &arr, int low, int high)
+{
+    int pivote = arr[high].fisica;
+    int i = low - 1;
+    int j = low;
+
+    for (j; j <= high - 1; j++)
+    {
+        if (arr[j].fisica <= pivote)
+        {
+            i++;
+            swap (arr[i], arr[j]);
+        }
+    }
+
+    swap (arr[i+1], arr[j]);
+
+    return (i+1);
+}
+
+void top10fissort(vector<Notas> &arr, int low, int high)
+{
+    if (low < high)
+    {
+        int pi = top10fis(arr, low, high);
+
+        top10fissort(arr, low, pi - 1);
+        top10fissort(arr, pi + 1, high);
+    }
+}
+
+void mostrartop10fis(){
+    counterC++;
+    cout << "</TOP 10 en Fisica\\>\n";
+    for (int i = alma; alma-10 < i; i--)
+    {
+        cout << "\nTOP: " << counterC++;
+        cout << "\nNombre: "<< arr[i].nombre << endl;
+        cout << "Apellido: " << arr[i].apellido << endl;
+        cout << "Email: " <<arr[i].email << endl;
+        cout << "Genero: " <<arr[i].sexo << endl;
+        cout << "Nota: " << arr[i].fisica << endl;
+    }
+    counterC = 0;
+}
+
+///////////////Educacion Fisica////////////////
+int top10efis(vector<Notas> &arr, int low, int high)
+{
+    int pivote = arr[high].e_fisica;
+    int i = low - 1;
+    int j = low;
+
+    for (j; j <= high - 1; j++)
+    {
+        if (arr[j].e_fisica <= pivote)
+        {
+            i++;
+            swap (arr[i], arr[j]);
+        }
+    }
+
+    swap (arr[i+1], arr[j]);
+
+    return (i+1);
+}
+
+void top10efissort(vector<Notas> &arr, int low, int high)
+{
+    if (low < high)
+    {
+        int pi = top10efis(arr, low, high);
+
+        top10efissort(arr, low, pi - 1);
+        top10efissort(arr, pi + 1, high);
+    }
+}
+
+void mostrartop10efis(){
+    counterC++;
+    cout << "</TOP 10 en Educacion Fisica\\>\n";
+    for (int i = alma; alma-10 < i; i--)
+    {
+        cout << "\nTOP: " << counterC++;
+        cout << "\nNombre: "<< arr[i].nombre << endl;
+        cout << "Apellido: " << arr[i].apellido << endl;
+        cout << "Email: " <<arr[i].email << endl;
+        cout << "Genero: " <<arr[i].sexo << endl;
+        cout << "Nota: " << arr[i].e_fisica << endl;
+    }
+    counterC = 0;
+}
+
+///////////////Artes////////////////
+int top10art(vector<Notas> &arr, int low, int high)
+{
+    int pivote = arr[high].artes;
+    int i = low - 1;
+    int j = low;
+
+    for (j; j <= high - 1; j++)
+    {
+        if (arr[j].artes <= pivote)
+        {
+            i++;
+            swap (arr[i], arr[j]);
+        }
+    }
+
+    swap (arr[i+1], arr[j]);
+
+    return (i+1);
+}
+
+void top10artsort(vector<Notas> &arr, int low, int high)
+{
+    if (low < high)
+    {
+        int pi = top10art(arr, low, high);
+
+        top10artsort(arr, low, pi - 1);
+        top10artsort(arr, pi + 1, high);
+    }
+}
+
+void mostrartop10art(){
+    counterC++;
+    cout << "</TOP 10 en Artes\\>\n";
+    for (int i = alma; alma-10 < i; i--)
+    {
+        cout << "\nTOP: " << counterC++;
+        cout << "\nNombre: "<< arr[i].nombre << endl;
+        cout << "Apellido: " << arr[i].apellido << endl;
+        cout << "Email: " <<arr[i].email << endl;
+        cout << "Genero: " <<arr[i].sexo << endl;
+        cout << "Nota: " << arr[i].artes << endl;
+    }
+    counterC = 0;
+}
+
+///////////////sociales////////////////
+int top10soci(vector<Notas> &arr, int low, int high)
+{
+    int pivote = arr[high].sociales;
+    int i = low - 1;
+    int j = low;
+
+    for (j; j <= high - 1; j++)
+    {
+        if (arr[j].sociales <= pivote)
+        {
+            i++;
+            swap (arr[i], arr[j]);
+        }
+    }
+
+    swap (arr[i+1], arr[j]);
+
+    return (i+1);
+}
+
+void top10socisort(vector<Notas> &arr, int low, int high)
+{
+    if (low < high)
+    {
+        int pi = top10soci(arr, low, high);
+
+        top10socisort(arr, low, pi - 1);
+        top10socisort(arr, pi + 1, high);
+    }
+}
+
+void mostrartop10soci(){
+    counterC++;    
+    cout << "</TOP 10 en Sociales\\>\n";
+    for (int i = alma; alma-10 < i; i--)
+    {
+        cout << "\nTOP: " << counterC++;
+        cout << "\nNombre: "<< arr[i].nombre << endl;
+        cout << "Apellido: " << arr[i].apellido << endl;
+        cout << "Email: " <<arr[i].email << endl;
+        cout << "Genero: " <<arr[i].sexo << endl;
+        cout << "Nota: " << arr[i].sociales << endl;
+    }
+    counterC = 0;
+}
+
+///////////////Biologia////////////////
+int top10bio(vector<Notas> &arr, int low, int high)
+{
+    int pivote = arr[high].biologia;
+    int i = low - 1;
+    int j = low;
+
+    for (j; j <= high - 1; j++)
+    {
+        if (arr[j].biologia <= pivote)
+        {
+            i++;
+            swap (arr[i], arr[j]);
+        }
+    }
+
+    swap (arr[i+1], arr[j]);
+
+    return (i+1);
+}
+
+void top10biosort(vector<Notas> &arr, int low, int high)
+{
+    if (low < high)
+    {
+        int pi = top10bio(arr, low, high);
+
+        top10biosort(arr, low, pi - 1);
+        top10biosort(arr, pi + 1, high);
+    }
+}
+
+void mostrartop10bio(){
+    counterC++;
+    cout << "</TOP 10 en Biologia\\>\n";
+    for (int i = alma; alma-10 < i; i--)
+    {
+        cout << "TOP: " << counterC++;
+        cout << "\nNombre: "<< arr[i].nombre << endl;
+        cout << "Apellido: " << arr[i].apellido << endl;
+        cout << "Email: " <<arr[i].email << endl;
+        cout << "Genero: " <<arr[i].sexo << endl;
+        cout << "Nota: " << arr[i].biologia << endl;
+    }
+    counterC = 0;
+}
 
 void probando(){
-    cout << arr[alma].nombre << endl;
-    cout << arr[alma].apellido << endl;
-    cout << arr[alma].email << endl;
-    cout << arr[alma].sexo << endl;
-    cout << arr[alma].matematica << endl;
-    cout << arr[alma].biologia << endl;
-    cout << arr[alma].fisica << endl;
-    cout << arr[alma].e_fisica << endl; 
-    cout << arr[alma].sociales << endl;
-    cout << arr[alma].artes << endl;
+    cout << arr[1].nombre << endl;
+    cout << arr[1].apellido << endl;
+    cout << arr[1].email << endl;
+    cout << arr[1].sexo << endl;
+    cout << arr[1].matematica << endl;
+    cout << arr[1].biologia << endl;
+    cout << arr[1].fisica << endl;
+    cout << arr[1].e_fisica << endl; 
+    cout << arr[1].sociales << endl;
+    cout << arr[1].artes << endl;
     
 }
