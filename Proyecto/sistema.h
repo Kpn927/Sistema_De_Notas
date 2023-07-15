@@ -31,5 +31,13 @@ string line;
 
 unsigned int alma;
 
+// Funciones //
 
+void mostrar_persona();
+void sociales();
+void Matematica();
+void Fisica();
+void Biologia();
+void EFisica();
+void Artes();
 

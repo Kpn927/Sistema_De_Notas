@@ -9,6 +9,8 @@ using namespace std;
 
 #include "sistema.h"
 
+unsigned int counterA, counterB;
+
 void llenado_vector() 
 {
     alma = 0;
@@ -98,4 +100,121 @@ void mostrar_persona(){
     else {
         cout << "No se ha encontrado, por favor, ingrese otro nombre. " << endl;
     }
+}
+
+//////////////////////////////////////////
+///// Materias aprovadas y reprobadas/////
+//////////////////////////////////////////
+
+void sociales()
+{
+    for (int i = 0; i < alma; i++)
+    {
+        if (arr[i].sociales >= 10)
+        {
+            counterA++;
+        }
+        if (arr[i].sociales < 10)
+        {
+            counterB++;
+        }
+    }
+    cout << "Estudiantes Aprobados y Reprobados en Sociales: " << endl;
+    cout << "\nPasaron: " << counterA << endl;
+    cout << "Reprobaron: " << counterB << endl;
+    counterA = 0; counterB = 0;
+    
+}
+
+void Matematica()
+{
+    for (int i = 0; i < alma; i++)
+    {
+        if (arr[i].matematica >= 10)
+        {
+            counterA++;
+        }
+        if (arr[i].matematica < 10)
+        {
+            counterB++;
+        }
+    }
+    cout << "Estudiantes Aprobados y Reprobados en Matematica: " << endl;
+    cout << "\nPasaron: " << counterA << endl;
+    cout << "Reprobaron: " << counterB << endl;
+    counterA = 0; counterB = 0;
+}
+
+void Fisica()
+{
+    for (int i = 0; i < alma; i++)
+    {
+        if (arr[i].fisica >= 10)
+        {
+            counterA++;
+        }
+        if (arr[i].fisica < 10)
+        {
+            counterB++;
+        }
+    }
+    cout << "Estudiantes Aprobados y Reprobados en Fisica: " << endl;
+    cout << "\nPasaron: " << counterA << endl;
+    cout << "Reprobaron: " << counterB << endl;
+    counterA = 0; counterB = 0;
+}
+
+void EFisica()
+{
+    for (int i = 0; i < alma; i++)
+    {
+        if (arr[i].e_fisica >= 10)
+        {
+            counterA++;
+        }
+        if (arr[i].e_fisica < 10)
+        {
+            counterB++;
+        }
+    }
+    cout << "Estudiantes Aprobados y Reprobados en Educación Fisica: " << endl;
+    cout << "\nPasaron: " << counterA << endl;
+    cout << "Reprobaron: " << counterB << endl;
+    counterA = 0; counterB = 0;
+}
+void Biologia()
+{
+    for (int i = 0; i < alma; i++)
+    {
+        if (arr[i].biologia >= 10)
+        {
+            counterA++;
+        }
+        if (arr[i].biologia < 10)
+        {
+            counterB++;
+        }
+    }
+    cout << "Estudiantes Aprobados y Reprobados en Biologia: " << endl;
+    cout << "\nPasaron: " << counterA << endl;
+    cout << "Reprobaron: " << counterB << endl;
+    counterA = 0; counterB = 0;
+}
+void Artes()
+{
+    for (int i = 0; i < alma; i++)
+    {
+        if (arr[i].artes >= 10)
+        {
+            counterA++;
+        }
+        if (arr[i].artes < 10)
+        {
+            counterB++;
+        }
+    }
+    cout << "Estudiantes Aprobados y Reprobados en Artes: " << endl;
+    cout << "\nPasaron: " << counterA << endl;
+    cout << "Reprobaron: " << counterB << endl;
+    counterA = 0; counterB = 0;
 }
