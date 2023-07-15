@@ -8,8 +8,3 @@
 
 using namespace std;
 
-int main ()
-{
-    llenado_vector();
-    boleta();
-}

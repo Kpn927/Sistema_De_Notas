@@ -85,11 +85,6 @@ void llenado_vector()
 }
 // Código reusado de mi anterior proyecto con GABO1423. // 
 
-void clear(){
-
-    system("CLS");
-    cout << endl;
-}
 void mostrar_persona(){
     string nomb;
     string ape;
@@ -116,7 +111,7 @@ void mostrar_persona(){
         int sumatoria;
         sumatoria = (arr[index].sociales+arr[index].matematica+arr[index].artes+arr[index].biologia+arr[index].fisica+arr[index].e_fisica);
         prom = (float)sumatoria/6;
-        cout << "\n\nNombre: " << arr[index].nombre << " " << arr[index].apellido << endl;
+        cout << "\nNombre: " << arr[index].nombre << " " << arr[index].apellido << endl;
         cout << "Su promedio es: " << prom; 
     }
     else {
@@ -330,11 +325,11 @@ void edicion()
             cin >> matematicanuevo;
             if (matematicanuevo > 20)
             {
-                cout << "ERROR: El rango tiene que estar entre 01 y 20.";
+                cout << "ERROR: El rango tiene que estar entre 01 y 20.\n";
             }
-            else if (matematicanuevo < 0)
+            else if (matematicanuevo <= 0)
             {
-                cout << "ERROR: El rango tiene que estar entre 01 y 20.";
+                cout << "ERROR: El rango tiene que estar entre 01 y 20.\n";
             }
             else{
             con = 1;
@@ -349,11 +344,11 @@ void edicion()
             cin >> socialesnuevo;
             if (socialesnuevo > 20)
             {
-                cout << "ERROR: El rango tiene que estar entre 01 y 20.";
+                cout << "ERROR: El rango tiene que estar entre 01 y 20.\n";
             }
-            else if (socialesnuevo < 0)
+            else if (socialesnuevo <= 0)
             {
-                cout << "ERROR: El rango tiene que estar entre 01 y 20.";
+                cout << "ERROR: El rango tiene que estar entre 01 y 20.\n";
             }
             else{
             con = 1;
@@ -368,11 +363,11 @@ void edicion()
             cin >> artesnuevo;
             if (artesnuevo > 20)
             {
-                cout << "ERROR: El rango tiene que estar entre 01 y 20.";
+                cout << "ERROR: El rango tiene que estar entre 01 y 20.\n";
             }
-            else if (artesnuevo < 0)
+            else if (artesnuevo <= 0)
             {
-                cout << "ERROR: El rango tiene que estar entre 01 y 20.";
+                cout << "ERROR: El rango tiene que estar entre 01 y 20.\n";
             }
             else{
             con = 1;
@@ -387,11 +382,11 @@ void edicion()
             cin >> fisicanuevo;
             if (fisicanuevo > 20)
             {
-                cout << "ERROR: El rango tiene que estar entre 01 y 20.";
+                cout << "ERROR: El rango tiene que estar entre 01 y 20.\n";
             }
-            else if (fisicanuevo < 0)
+            else if (fisicanuevo <= 0)
             {
-                cout << "ERROR: El rango tiene que estar entre 01 y 20.";
+                cout << "ERROR: El rango tiene que estar entre 01 y 20.\n";
             }
             else{
             con = 1;
@@ -402,15 +397,15 @@ void edicion()
         case 5:
             do
             {
-            cout << "\nIngrese la nueva nota de Educación Fisica: ";
+            cout << "\nIngrese la nueva nota de Educacion Fisica: ";
             cin >> Efisicanuevo;
             if (Efisicanuevo > 20)
             {
-                cout << "ERROR: El rango tiene que estar entre 01 y 20.";
+                cout << "ERROR: El rango tiene que estar entre 01 y 20.\n";
             }
-            else if (Efisicanuevo < 0)
+            else if (Efisicanuevo <= 0)
             {
-                cout << "ERROR: El rango tiene que estar entre 01 y 20.";
+                cout << "ERROR: El rango tiene que estar entre 01 y 20.\n";
             }
             else{
             con = 1;
@@ -425,11 +420,11 @@ void edicion()
             cin >> biologianuevo;
             if (biologianuevo > 20)
             {
-                cout << "ERROR: El rango tiene que estar entre 01 y 20.";
+                cout << "ERROR: El rango tiene que estar entre 01 y 20.\n";
             }
-            else if (biologianuevo < 0)
+            else if (biologianuevo <= 0)
             {
-                cout << "ERROR: El rango tiene que estar entre 01 y 20.";
+                cout << "ERROR: El rango tiene que estar entre 01 y 20.\n";
             }
             else{
             con = 1;
@@ -442,19 +437,19 @@ void edicion()
             break;
         }
     }
-    cout << "\nQuieres modificar algo más?\n(Si = 1) (No = Otra cosa.): ";
+    cout << "\nQuieres modificar algo mas?\n(Si = 1) (No = Otra cosa.): ";
     cin >> opcion;
     cout << "\n";
 } while (opcion == 1);
 }
 
 void agregar(){
-    int opcion = 0;
+    int opcion = 0, con = 0;
     do
     {
     string newNombre, newApellido, newGenero, newEmail;
     unsigned int newMat, newBio, newFis, newArt, newEfis, newSoci;
-    cout << "</Agregar Alumno numero " << alma+1 << " \\>";
+    cout << "</Agregar Alumno numero" << alma+1 << "\\>";
 
     cout << "\nIngrese su nombre: ";
     cin >> newNombre;
@@ -468,8 +463,24 @@ void agregar(){
     cout << "Ingrese su Email: ";
     cin >> newEmail;
 
-    cout << "Ingrese la nota de Matematica: ";
-    cin >> newMat;
+    do
+    {
+        con = 0;
+        cout << "Ingrese su nota de Matematica: ";
+        cin >> newMat;
+    if (newMat > 20)
+    {
+        cout << "\nERROR: El rango tiene que estar entre 01 y 20.\n";
+    }
+    else if (newMat <= 0)
+    {
+        cout << "\nERROR: El rango tiene que estar entre 01 y 20.\n";
+    }
+    else
+    {
+    con = 1;
+    }
+    } while (con == 0);
     
     cout << "Ingrese la nota de Biologia: ";
     cin >> newBio;
@@ -486,7 +497,6 @@ void agregar(){
     cout << "Ingrese la nota de Sociales: ";
     cin >> newSoci;
 
-    alma++;
     arr[alma].nombre = newNombre;
     arr[alma].apellido = newApellido;
     arr[alma].email = newEmail;
@@ -497,10 +507,11 @@ void agregar(){
     arr[alma].e_fisica = newEfis;
     arr[alma].sociales = newSoci;
     arr[alma].artes = newArt;
-        cout << "\nQuieres agregar a otro alumno?\n(Si = 1) (No = Otra cosa.): ";
-        cin >> opcion;
-        cout << "\n";
-    }while (opcion == 1);
+    cout << "\nQuieres agregar a otro alumno?\n(Si = 0) (No = Otra cosa.): ";
+    cin >> opcion;
+    cout << "\n";
+    alma++;
+    }while (opcion == 0);
 }
 
 void promediomat()
@@ -915,16 +926,26 @@ void boleta()
     cout << "Promedio Total: " << temp1 << endl;
 }
 
-void probando(){
-    cout << arr[1].nombre << endl;
-    cout << arr[1].apellido << endl;
-    cout << arr[1].email << endl;
-    cout << arr[1].sexo << endl;
-    cout << arr[1].matematica << endl;
-    cout << arr[1].biologia << endl;
-    cout << arr[1].fisica << endl;
-    cout << arr[1].e_fisica << endl; 
-    cout << arr[1].sociales << endl;
-    cout << arr[1].artes << endl;
-    
+void structToCSV() 
+{
+    newDATA.open("DATA1.csv");
+
+    newDATA << "nombre,apellido,email,gender,matematicas,sociales,biologia,fisica,educacion_fisica,artes" << endl;
+
+    for (int i = 0; i <= (alma-1); i++)
+    {
+        newDATA << arr[i].nombre << ",";
+        newDATA << arr[i].apellido << ",";
+        newDATA << arr[i].email << ",";
+        newDATA << arr[i].sexo << ",";
+        newDATA << arr[i].matematica << ",";
+        newDATA << arr[i].sociales << ",";
+        newDATA << arr[i].biologia << ",";
+        newDATA << arr[i].fisica << ",";
+        newDATA << arr[i].e_fisica << ",";
+        newDATA << arr[i].artes << endl;
+    }
+
+    newDATA.close();
 }
+// Code Reutilizado pero modificado para mi conveniencia de proyecto anterior junto a GABO1423 para facilitar las cosas. //
