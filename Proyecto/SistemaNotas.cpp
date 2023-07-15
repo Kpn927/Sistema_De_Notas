@@ -11,6 +11,5 @@ using namespace std;
 int main ()
 {
     llenado_vector();
-    top10matsort(arr, 0, alma);
-    mostrartop10mat();
+    boleta();
 }

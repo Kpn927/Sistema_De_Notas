@@ -90,7 +90,6 @@ void clear(){
     system("CLS");
     cout << endl;
 }
-
 void mostrar_persona(){
     string nomb;
     string ape;
@@ -117,7 +116,7 @@ void mostrar_persona(){
         int sumatoria;
         sumatoria = (arr[index].sociales+arr[index].matematica+arr[index].artes+arr[index].biologia+arr[index].fisica+arr[index].e_fisica);
         prom = (float)sumatoria/6;
-        cout << "\nNombre: " << arr[index].nombre << " " << arr[index].apellido << endl;
+        cout << "\n\nNombre: " << arr[index].nombre << " " << arr[index].apellido << endl;
         cout << "Su promedio es: " << prom; 
     }
     else {
@@ -860,6 +859,60 @@ void mostrartop10bio(){
         cout << "Nota: " << arr[i].biologia << endl;
     }
     counterC = 0;
+}
+//////////
+//BOLETA//
+//////////
+void boleta()
+{
+    int temp, con = 0;
+    float temp1;
+    do
+    {
+    string nomb;
+    string ape;
+    cout << "Ingresa el nombre del alumno. " << endl;
+    cout << "\nNombre: ";
+    cin >> nomb;
+    cout << "Apellido: ";
+    cin >> ape;
+
+    bool found = false;
+    int index = -1;
+    for (int i = 0; i < alma; i++)
+    {
+        if ((arr[i].nombre == nomb) && (arr[i].apellido == ape))
+        {
+            found = true;
+            index = i;
+            break;
+        }
+    }
+
+    if (found) {
+        float prom;
+        int sumatoria;
+        sumatoria = (arr[index].sociales+arr[index].matematica+arr[index].artes+arr[index].biologia+arr[index].fisica+arr[index].e_fisica);
+        prom = (float)sumatoria/6;
+        temp1 = prom;
+        con = 1;
+    }
+    else {
+        cout << "No se ha encontrado, por favor, ingrese otro nombre. " << endl;
+    }
+    temp = index;
+    } while (con == 0);
+
+    cout << "Boleta para: " << arr[temp].nombre << arr[temp].apellido << endl;
+    cout << "---------------------------" << endl;
+    cout << "Matematica: " << arr[temp].matematica << endl;
+    cout << "Sociales: " << arr[temp].sociales << endl;
+    cout << "Fisica: " << arr[temp].fisica << endl;
+    cout << "Educacion Fisica: " << arr[temp].e_fisica << endl;
+    cout << "Biologia: " << arr[temp].biologia << endl;
+    cout << "Artes: " << arr[temp].artes << endl;
+    cout << "---------------------------" << endl;
+    cout << "Promedio Total: " << temp1 << endl;
 }
 
 void probando(){
