@@ -60,10 +60,17 @@ void llenado_vector()
 }
 // Código reusado de mi anterior proyecto con GABO1423. // 
 
+void clear(){
+
+    system("CLS");
+    cout << endl;
+}
+
 void mostrar_persona(){
     string nomb;
     string ape;
-    cout << "Nombre: ";
+    cout << "Ingresa el nombre del alumno. " << endl;
+    cout << "\nNombre: ";
     cin >> nomb;
     cout << "Apellido: ";
     cin >> ape;
@@ -81,15 +88,14 @@ void mostrar_persona(){
     }
 
     if (found) {
-        cout << "Nombre: " << arr[index].nombre << " " << arr[index].apellido << endl << arr[index].matematica << endl;
+        float prom;
+        int sumatoria;
+        sumatoria = (arr[index].sociales+arr[index].matematica+arr[index].artes+arr[index].biologia+arr[index].fisica+arr[index].e_fisica);
+        prom = (float)sumatoria/6;
+        cout << "\nNombre: " << arr[index].nombre << " " << arr[index].apellido << endl;
+        cout << "Su promedio es: " << prom; 
     }
     else {
         cout << "No se ha encontrado, por favor, ingrese otro nombre. " << endl;
     }
-}
-
-int main()
-{
-    llenado_vector();
-    mostrar_persona();
 }
