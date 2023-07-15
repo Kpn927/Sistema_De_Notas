@@ -246,7 +246,7 @@ void edicion()
     do
     {
     
-    cout << "Ingresa el nombre del alumno. " << endl;
+    cout << "\nIngresa el nombre del alumno. " << endl;
     cout << "\nNombre: ";
     cin >> nomb;
     cout << "Apellido: ";
@@ -285,26 +285,26 @@ void edicion()
         switch (opcion)
         {
         case 1:
-            cout << "Ingrese el nuevo nombre: " << endl;
+            cout << "\nIngrese el nuevo nombre: " << endl;
             cin >> nombrenuevo;
             arr[tempo].nombre = nombrenuevo;
             break;
         case 2:
-            cout << "Ingrese el nuevo apellido: " << endl;
+            cout << "\nIngrese el nuevo apellido: " << endl;
             cin >> apellidonuevo;
             arr[tempo].apellido = apellidonuevo;
             break;
         case 3:
-            cout << "Ingrese nuevo gmail: " << endl;
+            cout << "\nIngrese nuevo gmail: " << endl;
             cin >> nuevogmail;
             arr[tempo].email = nuevogmail;
         case 4:
-            cout << "Ingrese nuevo genero: " << endl;
+            cout << "\nIngrese nuevo genero: " << endl;
             cin >> nuevosexo;
             arr[tempo].sexo = nuevosexo;
             break;
         default:
-            cout << "ERROR: Escogiste un numero invalido.";
+            cout << "\nERROR: Escogiste un numero invalido.\n";
             break;
         }
     }
@@ -340,7 +340,7 @@ void edicion()
         case 2:
             do
             {
-            cout << "\nIngrese la nueva nota de Matematica: ";
+            cout << "\nIngrese la nueva nota de Sociales: ";
             cin >> socialesnuevo;
             if (socialesnuevo > 20)
             {
@@ -437,10 +437,10 @@ void edicion()
             break;
         }
     }
-    cout << "\nQuieres modificar algo mas?\n(Si = 1) (No = Otra cosa.): ";
+    cout << "\nQuieres modificar algo mas? (Si = 0) (No = Otra cosa.)\n->";
     cin >> opcion;
     cout << "\n";
-} while (opcion == 1);
+} while (opcion == 0);
 }
 
 void agregar(){
@@ -482,20 +482,100 @@ void agregar(){
     }
     } while (con == 0);
     
-    cout << "Ingrese la nota de Biologia: ";
-    cin >> newBio;
+    do
+    {
+        con = 0;
+        cout << "Ingrese su nota de Biologia: ";
+        cin >> newBio;
+    if (newBio > 20)
+    {
+        cout << "\nERROR: El rango tiene que estar entre 01 y 20.\n";
+    }
+    else if (newBio <= 0)
+    {
+        cout << "\nERROR: El rango tiene que estar entre 01 y 20.\n";
+    }
+    else
+    {
+    con = 1;
+    }
+    } while (con == 0);
 
-    cout << "Ingrese la nota de Fisica: ";
-    cin >> newFis;
+    do
+    {
+        con = 0;
+        cout << "Ingrese su nota de Fisica: ";
+        cin >> newFis;
+    if (newFis > 20)
+    {
+        cout << "\nERROR: El rango tiene que estar entre 01 y 20.\n";
+    }
+    else if (newFis <= 0)
+    {
+        cout << "\nERROR: El rango tiene que estar entre 01 y 20.\n";
+    }
+    else
+    {
+    con = 1;
+    }
+    } while (con == 0);
 
-    cout << "Ingrese la nota de Artes: ";
-    cin >> newArt;
-    
-    cout << "Ingrese la nota de Educacion fisica: ";
-    cin >> newEfis;
+    do
+    {
+        con = 0;
+        cout << "Ingrese su nota de Artes: ";
+        cin >> newArt;
+    if (newArt > 20)
+    {
+        cout << "\nERROR: El rango tiene que estar entre 01 y 20.\n";
+    }
+    else if (newArt <= 0)
+    {
+        cout << "\nERROR: El rango tiene que estar entre 01 y 20.\n";
+    }
+    else
+    {
+    con = 1;
+    }
+    } while (con == 0);
 
-    cout << "Ingrese la nota de Sociales: ";
-    cin >> newSoci;
+    do
+    {
+        con = 0;
+        cout << "Ingrese su nota de Educacion Fisica: ";
+        cin >> newEfis;
+    if (newEfis > 20)
+    {
+        cout << "\nERROR: El rango tiene que estar entre 01 y 20.\n";
+    }
+    else if (newEfis <= 0)
+    {
+        cout << "\nERROR: El rango tiene que estar entre 01 y 20.\n";
+    }
+    else
+    {
+    con = 1;
+    }
+    } while (con == 0);
+
+    do
+    {
+        con = 0;
+        cout << "Ingrese su nota de Sociales: ";
+        cin >> newSoci;
+    if (newSoci > 20)
+    {
+        cout << "\nERROR: El rango tiene que estar entre 01 y 20.\n";
+    }
+    else if (newSoci <= 0)
+    {
+        cout << "\nERROR: El rango tiene que estar entre 01 y 20.\n";
+    }
+    else
+    {
+    con = 1;
+    }
+    } while (con == 0);
 
     arr[alma].nombre = newNombre;
     arr[alma].apellido = newApellido;
@@ -507,7 +587,7 @@ void agregar(){
     arr[alma].e_fisica = newEfis;
     arr[alma].sociales = newSoci;
     arr[alma].artes = newArt;
-    cout << "\nQuieres agregar a otro alumno?\n(Si = 0) (No = Otra cosa.): ";
+    cout << "\nQuieres agregar a otro alumno? (Si = 0) (No = Otra cosa.)\n->";
     cin >> opcion;
     cout << "\n";
     alma++;
@@ -862,7 +942,7 @@ void mostrartop10bio(){
     cout << "</TOP 10 en Biologia\\>\n";
     for (int i = alma; alma-10 < i; i--)
     {
-        cout << "TOP: " << counterC++;
+        cout << "\nTOP: " << counterC++;
         cout << "\nNombre: "<< arr[i].nombre << endl;
         cout << "Apellido: " << arr[i].apellido << endl;
         cout << "Email: " <<arr[i].email << endl;
@@ -882,7 +962,7 @@ void boleta()
     {
     string nomb;
     string ape;
-    cout << "Ingresa el nombre del alumno. " << endl;
+    cout << "\nIngresa el nombre del alumno. " << endl;
     cout << "\nNombre: ";
     cin >> nomb;
     cout << "Apellido: ";
@@ -914,7 +994,7 @@ void boleta()
     temp = index;
     } while (con == 0);
 
-    cout << "Boleta para: " << arr[temp].nombre << arr[temp].apellido << endl;
+    cout << "\nBoleta para: " << arr[temp].nombre << " " << arr[temp].apellido << endl;
     cout << "---------------------------" << endl;
     cout << "Matematica: " << arr[temp].matematica << endl;
     cout << "Sociales: " << arr[temp].sociales << endl;
