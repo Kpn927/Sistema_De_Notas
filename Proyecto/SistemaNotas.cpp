@@ -7,3 +7,10 @@
 #include "sistema.h"
 
 using namespace std;
+
+int main ()
+{
+    llenado_vector();
+    agregar();
+    probando();
+}

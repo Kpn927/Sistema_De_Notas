@@ -449,3 +449,71 @@ void edicion()
 } while (opcion == 1);
 }
 
+void agregar(){
+    int opcion = 0;
+    do
+    {
+    string newNombre, newApellido, newGenero, newEmail;
+    unsigned int newMat, newBio, newFis, newArt, newEfis, newSoci;
+    cout << "</Agregar Alumno numero " << alma+1 << " \\>";
+
+    cout << "\nIngrese su nombre: ";
+    cin >> newNombre;
+    
+    cout << "Ingrese su apellido: ";
+    cin >> newApellido;
+
+    cout << "Ingrese su genero: ";
+    cin >> newGenero;
+
+    cout << "Ingrese su Email: ";
+    cin >> newEmail;
+
+    cout << "Ingrese la nota de Matematica: ";
+    cin >> newMat;
+    
+    cout << "Ingrese la nota de Biologia: ";
+    cin >> newBio;
+
+    cout << "Ingrese la nota de Fisica: ";
+    cin >> newFis;
+
+    cout << "Ingrese la nota de Artes: ";
+    cin >> newArt;
+    
+    cout << "Ingrese la nota de Educacion fisica: ";
+    cin >> newEfis;
+
+    cout << "Ingrese la nota de Sociales: ";
+    cin >> newSoci;
+
+    alma++;
+    arr[alma].nombre = newNombre;
+    arr[alma].apellido = newApellido;
+    arr[alma].email = newEmail;
+    arr[alma].sexo = newGenero;
+    arr[alma].matematica = newMat;
+    arr[alma].biologia = newBio;
+    arr[alma].fisica = newFis;
+    arr[alma].e_fisica = newEfis;
+    arr[alma].sociales = newSoci;
+    arr[alma].artes = newArt;
+        cout << "\nQuieres agregar a otro alumno?\n(Si = 1) (No = Otra cosa.): ";
+        cin >> opcion;
+        cout << "\n";
+    }while (opcion == 1);
+}
+
+void probando(){
+    cout << arr[alma].nombre << endl;
+    cout << arr[alma].apellido << endl;
+    cout << arr[alma].email << endl;
+    cout << arr[alma].sexo << endl;
+    cout << arr[alma].matematica << endl;
+    cout << arr[alma].biologia << endl;
+    cout << arr[alma].fisica << endl;
+    cout << arr[alma].e_fisica << endl; 
+    cout << arr[alma].sociales << endl;
+    cout << arr[alma].artes << endl;
+    
+}
