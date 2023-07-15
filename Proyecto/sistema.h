@@ -504,6 +504,80 @@ void agregar(){
     }while (opcion == 1);
 }
 
+void promediomat()
+{
+    unsigned int temp;
+    float result;
+    for (int i = 0; i < alma; i++)
+    {
+        temp+= arr[i].matematica;
+    }
+    result = (float)temp / (float)alma;
+
+    cout << "Promedio en matematica es: " << result;
+}
+void promediosoci()
+{
+    unsigned int temp;
+    float result;
+    for (int i = 0; i < alma; i++)
+    {
+        temp+= arr[i].sociales;
+    }
+    result = (float)temp / (float)alma;
+
+    cout << "Promedio en sociales es: " << result;
+}
+void promediofis()
+{
+    unsigned int temp;
+    float result;
+    for (int i = 0; i < alma; i++)
+    {
+        temp+= arr[i].fisica;
+    }
+    result = (float)temp / (float)alma;
+
+    cout << "Promedio en fisica es: " << result;
+}
+void promedioefis()
+{
+    unsigned int temp;
+    float result;
+    for (int i = 0; i < alma; i++)
+    {
+        temp+= arr[i].e_fisica;
+    }
+    result = (float)temp / (float)alma;
+
+    cout << "Promedio en Educacion fisica es: " << result;
+}
+void promedioarte()
+{
+    unsigned int temp;
+    float result;
+    for (int i = 0; i < alma; i++)
+    {
+        temp+= arr[i].artes;
+    }
+    result = (float)temp / (float)alma;
+
+    cout << "Promedio en Artes es: " << result;
+}
+void promediobio()
+{
+    unsigned int temp;
+    float result;
+    for (int i = 0; i < alma; i++)
+    {
+        temp+= arr[i].biologia;
+    }
+    result = (float)temp / (float)alma;
+
+    cout << "Promedio en biologia es: " << result;
+}
+
+
 void probando(){
     cout << arr[alma].nombre << endl;
     cout << arr[alma].apellido << endl;
