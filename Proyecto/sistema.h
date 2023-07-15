@@ -242,11 +242,13 @@ void Artes()
     counterA = 0; counterB = 0;
 }
 
+//FUNCION EDICION//
+
 void edicion()
 {
+    unsigned int opcion, tempo;
     bool found = false;
     string nombrenuevo, apellidonuevo, nuevogmail, nuevosexo, nomb, ape;
-    unsigned int matematicanuevo, fisicanuevo, artesnuevo, Efisicanuevo, biologianuevo, socialesnuevo, opcion, tempo;
     do
     {
     
@@ -275,8 +277,9 @@ void edicion()
         cout << "No se ha encontrado, por favor, ingrese otro nombre. " << endl;
     }
     } while (found != true);
-
-    cout << "Que vamos a modificar\n(1= Dato Personal)\n(2= Notas)\n-> ";
+    do
+    {
+    cout << "\nQue vamos a modificar\n(1= Dato Personal)\n(2= Notas)\n-> ";
     cin >> opcion;
 
     if (opcion == 1)
@@ -292,14 +295,157 @@ void edicion()
             cin >> nombrenuevo;
             arr[tempo].nombre = nombrenuevo;
             break;
-        
+        case 2:
+            cout << "Ingrese el nuevo apellido: " << endl;
+            cin >> apellidonuevo;
+            arr[tempo].apellido = apellidonuevo;
+            break;
+        case 3:
+            cout << "Ingrese nuevo gmail: " << endl;
+            cin >> nuevogmail;
+            arr[tempo].email = nuevogmail;
+        case 4:
+            cout << "Ingrese nuevo genero: " << endl;
+            cin >> nuevosexo;
+            arr[tempo].sexo = nuevosexo;
+            break;
         default:
+            cout << "ERROR: Escogiste un numero invalido.";
             break;
         }
     }
     else if (opcion == 2)
     {
-        /* code */
+        unsigned int matematicanuevo, fisicanuevo, artesnuevo, Efisicanuevo, biologianuevo, socialesnuevo;
+        int con = 0;
+        opcion = 0;
+        cout << "\nQue modificamos?\n(1= Matematicas)\n(2= Sociales)\n(3= Artes)\n(4= Fisica)\n(5= Educacion Fisica)\n(6= Biologia)\n->";
+        cin >> opcion;
+
+        switch (opcion)
+        {
+        case 1:
+            do
+            {
+            cout << "\nIngrese la nueva nota de Matematica: ";
+            cin >> matematicanuevo;
+            if (matematicanuevo > 20)
+            {
+                cout << "ERROR: El rango tiene que estar entre 01 y 20.";
+            }
+            else if (matematicanuevo < 0)
+            {
+                cout << "ERROR: El rango tiene que estar entre 01 y 20.";
+            }
+            else{
+            con = 1;
+            arr[tempo].matematica = matematicanuevo;
+            }
+            } while (con == 0);
+            break;
+        case 2:
+            do
+            {
+            cout << "\nIngrese la nueva nota de Matematica: ";
+            cin >> socialesnuevo;
+            if (socialesnuevo > 20)
+            {
+                cout << "ERROR: El rango tiene que estar entre 01 y 20.";
+            }
+            else if (socialesnuevo < 0)
+            {
+                cout << "ERROR: El rango tiene que estar entre 01 y 20.";
+            }
+            else{
+            con = 1;
+            arr[tempo].sociales = socialesnuevo;
+            }
+            } while (con == 0);
+            break;
+        case 3:
+            do
+            {
+            cout << "\nIngrese la nueva nota de artes: ";
+            cin >> artesnuevo;
+            if (artesnuevo > 20)
+            {
+                cout << "ERROR: El rango tiene que estar entre 01 y 20.";
+            }
+            else if (artesnuevo < 0)
+            {
+                cout << "ERROR: El rango tiene que estar entre 01 y 20.";
+            }
+            else{
+            con = 1;
+            arr[tempo].artes = artesnuevo;
+            }
+            } while (con == 0);
+            break;
+        case 4:
+            do
+            {
+            cout << "\nIngrese la nueva nota de fisica: ";
+            cin >> fisicanuevo;
+            if (fisicanuevo > 20)
+            {
+                cout << "ERROR: El rango tiene que estar entre 01 y 20.";
+            }
+            else if (fisicanuevo < 0)
+            {
+                cout << "ERROR: El rango tiene que estar entre 01 y 20.";
+            }
+            else{
+            con = 1;
+            arr[tempo].fisica = artesnuevo;
+            }
+            } while (con == 0);
+            break;
+        case 5:
+            do
+            {
+            cout << "\nIngrese la nueva nota de Educación Fisica: ";
+            cin >> Efisicanuevo;
+            if (Efisicanuevo > 20)
+            {
+                cout << "ERROR: El rango tiene que estar entre 01 y 20.";
+            }
+            else if (Efisicanuevo < 0)
+            {
+                cout << "ERROR: El rango tiene que estar entre 01 y 20.";
+            }
+            else{
+            con = 1;
+            arr[tempo].e_fisica = Efisicanuevo;
+            }
+            } while (con == 0);
+            break;
+        case 6: 
+            do
+            {
+            cout << "\nIngrese la nueva nota de Biologia: ";
+            cin >> biologianuevo;
+            if (biologianuevo > 20)
+            {
+                cout << "ERROR: El rango tiene que estar entre 01 y 20.";
+            }
+            else if (biologianuevo < 0)
+            {
+                cout << "ERROR: El rango tiene que estar entre 01 y 20.";
+            }
+            else{
+            con = 1;
+            arr[tempo].biologia = biologianuevo;
+            }
+            } while (con == 0);
+            break;
+        default:
+            cout << "ERROR: Escogiste un numero invalido.";
+            break;
+        }
     }
+    cout << "\nQuieres modificar algo más?\n(Si = 1) (No = Otra cosa.): ";
+    cin >> opcion;
+    cout << "\n";
+} while (opcion == 1);
 }
 
