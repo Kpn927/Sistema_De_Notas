@@ -21,7 +21,8 @@ struct Notas
     unsigned int biologia;
     unsigned int e_fisica;
     unsigned int artes;
-    float prom;
+    float prom; 
+    unsigned int aplazados;
 } Users;
 
 struct profesores

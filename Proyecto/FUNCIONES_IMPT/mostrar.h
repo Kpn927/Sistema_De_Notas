@@ -530,3 +530,34 @@ void rendimientoprofe()
         }
     }
 }
+
+void buscarestudiante()
+{
+    unsigned opt, opt1, opt2, opt3;
+    string tempN, tempA, tempsec, tempseca;
+
+    cout << "\nIngresar ID del estudiante \n->";
+    cin >> opt;
+
+    opt--;
+
+    cout << "\nIngresa la materia\n(1001= Matematica)\n(1002= Sociales)\n(1003= Biologia)\n(1004= Educacion Fisica)\n(1005= Arte)\n->";
+    cin >> opt2;
+
+    for (int i = 0; i < alma2; i++)
+    {
+        if ((arr2[i].id_materia == opt2) && (arr[opt].seccion == arr2[i].seccionp))
+        {
+            tempN = arr2[i].nombrep;
+            tempA = arr2[i].apellidop;
+        }
+    }
+    if ((tempN == tempsec)&&(tempA == tempseca))
+    {
+        tempN = "No hay";
+        tempA = "profesor para la seccion.";
+    }
+    
+    cout << "\nEl profesor de " << arr[opt].nombre << " " << arr[opt].apellido << endl << "Es: " <<tempN << " " << tempA ;
+    
+}

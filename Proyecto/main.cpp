@@ -225,7 +225,7 @@ int main ()
 
     case 1:
         unsigned opt2; 
-        cout << endl <<"Has elegido seccion Profesores \n(1= Rendimiento de profesor)\n(2= Agregar un profesor)\n(3= Editar Profesor)\n->";
+        cout << endl <<"Has elegido seccion Profesores \n(1= Rendimiento de profesor)\n(2= Agregar un profesor)\n(3= Editar Profesor)\n(4= Eliminar Profesor)\n(5= Buscar Profesor del Estudiante)\n->";
         cin >> opt2;
             switch (opt2)
             {
@@ -244,7 +244,10 @@ int main ()
             case 4: 
                 eliminarprofe();
                 break;
-                
+            
+            case 5:
+                buscarestudiante();
+                break;
             default:
                 cout << "\nSeleccion una de las opciones, porfavor." << endl;
                 break;
