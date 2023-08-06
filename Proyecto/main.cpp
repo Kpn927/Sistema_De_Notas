@@ -23,7 +23,7 @@ int main ()
 
     do
     {
-    cout << "Escogiste Sección de Alumnos. \n(1= Buscar un alumno y su promedio)\n(2= Revisar Aprobados y Desaprobados)\n(3= Agregar Alumno)\n(4= Eliminar Alumno)\n(5= Editar Informacion del Alumno)\n(6= Promedio de Materias)\n(7= Top Estudiantes)\n(8= Crear Boletas)\n->";
+    cout << "Escogiste Sección de Alumnos. \n(1= Buscar un alumno y su promedio)\n(2= Revisar Aprobados y Desaprobados)\n(3= Agregar Alumno)\n(4= Eliminar Alumno)\n(5= Editar Informacion del Alumno)\n(6= Promedio de Materias)\n(7= Top Estudiantes)\n(8= Crear Boletas)\n(9= Top 10 Estudiantes Por Seccion)\n->";
     cin >> opt;
     switch (opt)
     {
@@ -166,6 +166,49 @@ int main ()
         cout << "\n\nQuiere crear otra boleta? (Si = 0)(No = Otro numero.)\n->";
         cin >> opt;
         } while (opt == 0);
+        break;
+
+    case 9:
+        int option10;
+        cout << "Ingrese la seccion que se quiere visualisar el top 10 \n(1= A)\n(2= B)\n(3= C)\n(4= D)\n->";
+        cin >> option10;
+        switch (option10)
+        {
+        case 1:
+            promllenado();
+            promsortx(arr, 0, alma);
+            sortsecx(arr, 0, alma);
+            contasecA();
+            seccionA();
+            break;
+
+        case 2:
+            promllenado();
+            promsortx(arr, 0, alma);
+            sortsecx(arr, 0, alma);
+            contasecB();
+            seccionB();
+            break;
+
+        case 3:
+            promllenado();
+            promsortx(arr, 0, alma);
+            sortsecx(arr, 0, alma);
+            contasecC();
+            seccionC();
+            break;
+
+        case 4:
+            promllenado();
+            promsortx(arr, 0, alma);
+            sortsecx(arr, 0, alma);
+            contasecD();
+            seccionD();
+            break;
+        
+        default:
+            break;
+        }
         break;
 
     default:
