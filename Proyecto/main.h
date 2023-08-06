@@ -146,7 +146,7 @@ void structToCSV()
 
     newDATA << "id,nombre,apellido,email,genero,seccion,matematicas,sociales,biologia,educacion_fisica,artes" << endl;
 
-    for (int i = 1; i <= (alma-1); i++)
+    for (int i = 0; i <= (alma-1); i++)
     {
         newDATA << arr[i].id << ",";
         newDATA << arr[i].nombre << ",";

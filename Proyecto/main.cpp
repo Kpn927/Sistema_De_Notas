@@ -7,7 +7,6 @@
 #include "main.h"
 #include "FUNCIONES_IMPT\mostrar.h"
 #include "FUNCIONES_SEARCH_SORT\sort.h"
-#include "FUNCIONES_SEARCH_SORT\search.h"
 #include "FUNCIONES_IMPT\modificaciones.h"
 
 
@@ -23,7 +22,9 @@ int main ()
 
     do
     {
-    cout << "Escogiste Sección de Alumnos. \n(1= Buscar un alumno y su promedio)\n(2= Revisar Aprobados y Desaprobados)\n(3= Agregar Alumno)\n(4= Eliminar Alumno)\n(5= Editar Informacion del Alumno)\n(6= Promedio de Materias)\n(7= Top Estudiantes)\n(8= Crear Boletas)\n(9= Top 10 Estudiantes Por Seccion)\n->";
+    cout << "Escogiste Sección de Alumnos. \n(1= Buscar un alumno y su promedio)\n(2= Revisar Aprobados y Desaprobados)\n(3= Agregar Alumno)" << 
+    "\n(4= Eliminar Alumno)\n(5= Editar Informacion del Alumno)\n(6= Promedio de Materias)\n(7= Top Estudiantes)\n(8= Crear Boletas)\n(9= Top 10 Estudiantes Por Seccion)" <<
+    "\n(10= Rendimiento de profesor)\n->";
     cin >> opt;
     switch (opt)
     {
@@ -178,7 +179,6 @@ int main ()
             promllenado();
             promsortx(arr, 0, alma);
             sortsecx(arr, 0, alma);
-            contasecA();
             seccionA();
             break;
 
@@ -186,7 +186,6 @@ int main ()
             promllenado();
             promsortx(arr, 0, alma);
             sortsecx(arr, 0, alma);
-            contasecB();
             seccionB();
             break;
 
@@ -194,7 +193,6 @@ int main ()
             promllenado();
             promsortx(arr, 0, alma);
             sortsecx(arr, 0, alma);
-            contasecC();
             seccionC();
             break;
 
@@ -202,7 +200,6 @@ int main ()
             promllenado();
             promsortx(arr, 0, alma);
             sortsecx(arr, 0, alma);
-            contasecD();
             seccionD();
             break;
         
@@ -210,7 +207,9 @@ int main ()
             break;
         }
         break;
-
+    case 10:
+        rendimientoprofe();
+        break;
     default:
         cout << "\nSeleccion una de las opciones, porfavor." << endl;
         break;

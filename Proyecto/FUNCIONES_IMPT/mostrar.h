@@ -345,3 +345,188 @@ void boleta()
     cout << "---------------------------" << endl;
     cout << "Promedio Total: " << temp1 << endl;
 }
+
+void rendimientoprofe()
+{
+    unsigned int opt1, opt2, opt3;
+
+    cout << "\nQue profesor queremos revisar el rendimiento? (Introduzca el ID) \n->";
+    cin >> opt1;
+    cout << endl;
+    opt1--;
+
+    cout << "Estamos buscando a: " << arr2[opt1].nombrep << " " << arr2[opt1].apellidop << endl;
+    cout << "(Si= 0) (No= Otro numero)\n->";
+    cin >> opt2;
+    cout << endl;
+    string tempL;
+    float porcentajeA, porcentajeAp;
+    if (opt2 == 0)
+    {
+        if (arr2[opt1].id_materia == 1001)
+        {
+            int total;
+            tempL = arr2[opt1].seccionp;
+            cout << "Su materia es: Matematica" << endl;
+            cout << "Su seccion es: " << arr2[opt1].seccionp << endl;
+
+            for (int i = 0; i < alma; i++)
+            {
+                if (((arr[i].matematica) >= 10) && (arr[i].seccion == tempL))
+                {
+                    counterA++;
+                }
+                else if (((arr[i].matematica) <= 10) && (arr[i].seccion == tempL))
+                {
+                    counterB++;
+                }
+                
+            }
+            total = counterA + counterB;
+            porcentajeA = ((float)counterA / (float)total) * 100;
+            porcentajeAp = ((float)counterB / (float)total) * 100;
+            if (porcentajeA < porcentajeAp)
+            {
+                cout << endl <<"El rendimiento del profesor no es el apropiado." << endl;
+            }
+            else
+            {
+                cout << endl <<"El rendimiento del profesor es aceptable." << endl;
+            }
+            
+            counterA = 0; counterB = 0;
+        }
+        else if (arr2[opt1].id_materia == 1002)
+        {
+            int total;
+            tempL = arr2[opt1].seccionp;
+            cout << "Su materia es: Sociales" << endl;
+            cout << "Su seccion es: " << arr2[opt1].seccionp << endl;
+
+            for (int i = 0; i < alma; i++)
+            {
+                if (((arr[i].sociales) >= 10) && (arr[i].seccion == tempL))
+                {
+                    counterA++;
+                }
+                else if (((arr[i].sociales) <= 10) && (arr[i].seccion == tempL))
+                {
+                    counterB++;
+                }
+                
+            }
+            total = counterA + counterB;
+            porcentajeA = ((float)counterA / (float)total) * 100;
+            porcentajeAp = ((float)counterB / (float)total) * 100;
+            if (porcentajeA < porcentajeAp)
+            {
+                cout << endl <<"El rendimiento del profesor no es el apropiado." << endl;
+            }
+            else
+            {
+                cout << endl <<"El rendimiento del profesor es aceptable." << endl;
+            }
+            
+            counterA = 0; counterB = 0;
+        }
+        else if (arr2[opt1].id_materia == 1003)
+        {
+            int total;
+            tempL = arr2[opt1].seccionp;
+            cout << "Su materia es: Biologia" << endl;
+            cout << "Su seccion es: " << arr2[opt1].seccionp << endl;
+
+            for (int i = 0; i < alma; i++)
+            {
+                if (((arr[i].biologia) >= 10) && (arr[i].seccion == tempL))
+                {
+                    counterA++;
+                }
+                else if (((arr[i].biologia) <= 10) && (arr[i].seccion == tempL))
+                {
+                    counterB++;
+                }
+                
+            }
+            total = counterA + counterB;
+            porcentajeA = ((float)counterA / (float)total) * 100;
+            porcentajeAp = ((float)counterB / (float)total) * 100;
+            if (porcentajeA < porcentajeAp)
+            {
+                cout << endl <<"El rendimiento del profesor no es el apropiado." << endl;
+            }
+            else
+            {
+                cout << endl <<"El rendimiento del profesor es aceptable." << endl;
+            }
+            
+            counterA = 0; counterB = 0;
+        }
+        else if (arr2[opt1].id_materia == 1004)
+        {
+            int total;
+            tempL = arr2[opt1].seccionp;
+            cout << "Su materia es: Educacion Fisica" << endl;
+            cout << "Su seccion es: " << arr2[opt1].seccionp << endl;
+
+            for (int i = 0; i < alma; i++)
+            {
+                if (((arr[i].e_fisica) >= 10) && (arr[i].seccion == tempL))
+                {
+                    counterA++;
+                }
+                else if (((arr[i].e_fisica) <= 10) && (arr[i].seccion == tempL))
+                {
+                    counterB++;
+                }
+                
+            }
+            total = counterA + counterB;
+            porcentajeA = ((float)counterA / (float)total) * 100;
+            porcentajeAp = ((float)counterB / (float)total) * 100;
+            if (porcentajeA < porcentajeAp)
+            {
+                cout << endl <<"El rendimiento del profesor no es el apropiado." << endl;
+            }
+            else
+            {
+                cout << endl <<"El rendimiento del profesor es aceptable." << endl;
+            }
+            
+            counterA = 0; counterB = 0;
+        }
+        else if (arr2[opt1].id_materia == 1005)
+        {
+            int total;
+            tempL = arr2[opt1].seccionp;
+            cout << "Su materia es: Arte" << endl;
+            cout << "Su seccion es: " << arr2[opt1].seccionp << endl;
+
+            for (int i = 0; i < alma; i++)
+            {
+                if (((arr[i].artes) >= 10) && (arr[i].seccion == tempL))
+                {
+                    counterA++;
+                }
+                else if (((arr[i].artes) <= 10) && (arr[i].seccion == tempL))
+                {
+                    counterB++;
+                }
+                
+            }
+            total = counterA + counterB;
+            porcentajeA = ((float)counterA / (float)total) * 100;
+            porcentajeAp = ((float)counterB / (float)total) * 100;
+            if (porcentajeA < porcentajeAp)
+            {
+                cout << endl <<"El rendimiento del profesor no es el apropiado." << endl;
+            }
+            else
+            {
+                cout << endl <<"El rendimiento del profesor es aceptable." << endl;
+            }
+            
+            counterA = 0; counterB = 0;
+        }
+    }
+}
