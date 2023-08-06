@@ -4,19 +4,27 @@
 #include <vector>
 #include <string>
 #include <math.h>
-#include "sistema.h"
+#include "main.h"
+#include "FUNCIONES_IMPT\mostrar.h"
+#include "FUNCIONES_SEARCH_SORT\sort.h"
+#include "FUNCIONES_SEARCH_SORT\search.h"
+#include "FUNCIONES_IMPT\modificaciones.h"
+
 
 using namespace std;
 
-unsigned int opt, reinicio; 
+int opt, reinicio;
 
 int main ()
 {
-    llenado_vector();
+    llenado_vector1();
+    llenado_vector2();
+
+    cout << arr2[0].nombrep;
     do
     {
     cout << "\nBuenas, este es el centro de comandos para el manejo de base de datos para la institucion.\n" << endl;
-    cout << "Que queremos hacer hoy?\n(1= Buscar el promedio de un Alumno)\n(2= Revisar Aprobados y Desaprobados)\n(3= Agregar Alumno)\n(4= Editar Informacion del Alumno)\n(5= Promedio de Materias)\n(6= Top Estudiantes)\n(7= Crear Boletas)\n->";
+    cout << "Que queremos hacer hoy?\n(1= Buscar un alumno y su promedio)\n(2= Revisar Aprobados y Desaprobados)\n(3= Agregar Alumno)\n(4= Editar Informacion del Alumno)\n(5= Promedio de Materias)\n(6= Top Estudiantes)\n(7= Crear Boletas)\n->";
     cin >> opt;
     switch (opt)
     {
@@ -26,7 +34,7 @@ int main ()
         {
         cout << endl;
         mostrar_persona();
-        cout << "\n\nQuiere ubicar a otra persona? (Si = 0)(No = Otra cosa.)\n->";
+        cout << "\n\nQuiere ubicar a otra persona? (Si = 0)(No = Otro numero.)\n->";
         cin >> opt;
         } while (opt == 0);
         break;
@@ -36,7 +44,7 @@ int main ()
         int opt1;
         do
         {
-        cout << "\nCual materia revisamos el promedio?\n(1= Matematica)\n(2= Sociales)\n(3= Artes)\n(4= Fisica)\n(5= Educacion Fisica)\n(6= Biologia)\n->";
+        cout << "\nCual materia revisamos el promedio?\n(1= Matematica)\n(2= Sociales)\n(3= Artes)\n(4= Educacion Fisica)\n(5= Biologia)\n->";
         cin >> opt1;
         cout << endl;
         switch (opt1)
@@ -51,19 +59,16 @@ int main ()
             Artes();
             break;
         case 4:
-            Fisica();
-            break;
-        case 5:
             EFisica();
             break;
-        case 6:
+        case 5:
             Biologia();
             break;
         default:
             cout << "\nSeleccion una de las opciones, porfavor." << endl;
             break;
         }
-        cout << "\n\nQuiere ver otra materia? (Si = 0)(No = Otra cosa.):";
+        cout << "\n\nQuiere ver otra materia? (Si = 0)(No = Otro numero.):";
         cin >> opt;
         } while (opt == 0);
         break;
@@ -80,7 +85,7 @@ int main ()
         {
         opt = 0;
         opt1 = 0;
-        cout << "\nCual materia revisamos el promedio?\n(1= Matematica)\n(2= Sociales)\n(3= Artes)\n(4= Fisica)\n(5= Educacion Fisica)\n(6= Biologia)\n->";
+        cout << "\nCual materia revisamos el promedio?\n(1= Matematica)\n(2= Sociales)\n(3= Artes)\n(4= Educacion Fisica)\n(5= Biologia)\n->";
         cin >> opt1;
         cout << endl;
         switch (opt1)
@@ -95,9 +100,6 @@ int main ()
             promedioarte();
             break;
         case 4:
-            promediofis();
-            break;
-        case 5:
             promedioefis();
             break;
         case 6:
@@ -107,7 +109,7 @@ int main ()
             cout << "\nSeleccion una de las opciones, porfavor." << endl;
             break;
         }
-        cout << "\n\nQuiere ver otra materia? (Si = 0)(No = Otra cosa.)\n->";
+        cout << "\n\nQuiere ver otra materia? (Si = 0)(No = Otro numero.)\n->";
         cin >> opt;
         } while (opt == 0);
         break;
@@ -116,7 +118,7 @@ int main ()
         {
         opt = 0;
         opt1 = 0;
-        cout << "\nCual materia revisamos el TOP 10?\n(1= Matematica)\n(2= Sociales)\n(3= Artes)\n(4= Fisica)\n(5= Educacion Fisica)\n(6= Biologia)\n->";
+        cout << "\nCual materia revisamos el TOP 10?\n(1= Matematica)\n(2= Sociales)\n(3= Artes)\n(4= Educacion Fisica)\n(5= Biologia)\n->";
         cin >> opt1;
         cout << endl;
         switch (opt1)
@@ -134,14 +136,10 @@ int main ()
             mostrartop10art();
             break;
         case 4:
-            top10fissort(arr, 0, alma);
-            mostrartop10fis();
-            break;
-        case 5:
             top10efissort(arr, 0, alma);
             mostrartop10efis();
             break;
-        case 6:
+        case 5:
             top10biosort(arr, 0, alma);
             mostrartop10bio();
             break;
@@ -149,7 +147,7 @@ int main ()
             cout << "\nSeleccion una de las opciones, porfavor." << endl;
             break;
         }
-        cout << "\n\nQuiere ver otra materia? (Si = 0)(No = Otra cosa.)\n->";
+        cout << "\n\nQuiere ver otra materia? (Si = 0)(No = Otro numero.)\n->";
         cin >> opt;
         } while (opt == 0);
         break;
@@ -159,7 +157,7 @@ int main ()
         {
         opt = 0;
         boleta();
-        cout << "\n\nQuiere crear otra boleta? (Si = 0)(No = Otra cosa.)\n->";
+        cout << "\n\nQuiere crear otra boleta? (Si = 0)(No = Otro numero.)\n->";
         cin >> opt;
         } while (opt == 0);
         break;
@@ -170,7 +168,9 @@ int main ()
     }
 
     structToCSV();
-    cout << "\nHaremos otra cosa? (Si = 0)(No = Otra cosa.):\n->";
+    structToCSV2();
+
+    cout << "\nHaremos otra cosa? (Si = 0)(No = Otro numero.):\n->";
     cin >> reinicio;
     if (reinicio == 0)
     {
