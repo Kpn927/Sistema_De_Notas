@@ -17,14 +17,13 @@ int opt, reinicio;
 
 int main ()
 {
+    cout << "\nBuenas, este es el centro de comandos para el manejo de base de datos para la institucion.\n" << endl;
     llenado_vector1();
     llenado_vector2();
 
-    cout << arr2[0].nombrep;
     do
     {
-    cout << "\nBuenas, este es el centro de comandos para el manejo de base de datos para la institucion.\n" << endl;
-    cout << "Que queremos hacer hoy?\n(1= Buscar un alumno y su promedio)\n(2= Revisar Aprobados y Desaprobados)\n(3= Agregar Alumno)\n(4= Editar Informacion del Alumno)\n(5= Promedio de Materias)\n(6= Top Estudiantes)\n(7= Crear Boletas)\n->";
+    cout << "Escogiste Sección de Alumnos. \n(1= Buscar un alumno y su promedio)\n(2= Revisar Aprobados y Desaprobados)\n(3= Agregar Alumno)\n(4= Eliminar Alumno)\n(5= Editar Informacion del Alumno)\n(6= Promedio de Materias)\n(7= Top Estudiantes)\n(8= Crear Boletas)\n->";
     cin >> opt;
     switch (opt)
     {
@@ -75,12 +74,19 @@ int main ()
     case 3:
         agregar();
         structToCSV();
+        structToCSV2();
         break;
     case 4:
-        edicion();
+        eliminar();
         structToCSV();
+        structToCSV2();
         break;
     case 5:
+        edicion();
+        structToCSV();
+        structToCSV2();
+        break;
+    case 6:
         do
         {
         opt = 0;
@@ -113,7 +119,7 @@ int main ()
         cin >> opt;
         } while (opt == 0);
         break;
-    case 6:
+    case 7:
         do
         {
         opt = 0;
@@ -152,7 +158,7 @@ int main ()
         } while (opt == 0);
         break;
 
-    case 7:
+    case 8:
         do
         {
         opt = 0;

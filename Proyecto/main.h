@@ -143,15 +143,15 @@ void structToCSV()
 {
     newDATA.open("ARCHIVOS_CSV/DATAE.csv");
 
-    newDATA << "id,nombre,apellido,genero,email,seccion,matematicas,sociales,biologia,educacion_fisica,artes" << endl;
+    newDATA << "id,nombre,apellido,email,genero,seccion,matematicas,sociales,biologia,educacion_fisica,artes" << endl;
 
     for (int i = 0; i <= (alma-1); i++)
     {
         newDATA << arr[i].id << ",";
         newDATA << arr[i].nombre << ",";
         newDATA << arr[i].apellido << ",";
-        newDATA << arr[i].email << ",";
         newDATA << arr[i].sexo << ",";
+        newDATA << arr[i].email << ",";
         newDATA << arr[i].seccion << ",";
         newDATA << arr[i].matematica << ",";
         newDATA << arr[i].sociales << ",";
@@ -170,13 +170,13 @@ void structToCSV2()
 
     newDATA2 << "id,nombre,apellido,genero,email,seccion,id_materia" << endl;
 
-    for (int i = 0; i <= (alma-1); i++)
+    for (int i = 0; i <= (alma2-1); i++)
     {
         newDATA2 << arr2[i].idp << ",";
         newDATA2 << arr2[i].nombrep << ",";
         newDATA2 << arr2[i].apellidop << ",";
-        newDATA << arr2[i].emailp << ",";
         newDATA2 << arr2[i].generop << ",";
+        newDATA2 << arr2[i].emailp << ",";
         newDATA2 << arr2[i].seccionp << ",";
         newDATA2 << arr2[i].id_materia << endl;
     }

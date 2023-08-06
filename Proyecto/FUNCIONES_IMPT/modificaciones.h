@@ -331,3 +331,46 @@ void agregar(){
     alma++;
     }while (opcion == 0);
 }
+void eliminar()
+{
+    unsigned int id, opt, opcion;
+    do
+    {
+    
+    cout << "\nPor favor Ingresa el ID del estudiante a eliminar. \n->";
+    cin >> id;
+
+    for (int i = 0; i < alma; i++)
+    {
+        if (arr[i].id == id)
+        {
+            cout << "El estudiante que quieres eliminar es: " << arr[i].nombre << " " << arr[i].apellido << endl;
+        }
+        else if ((id > alma) || (id < 0))
+        {
+            cout << "El estudiante no existe. " << endl;
+            id = 0;
+        }
+    }
+
+    if (id != 0)
+    {
+        cout << "Quieres eliminar este alumno? (Si = 0) (No = Otro numero.)\n-> ";
+        cin >> opt;
+
+        if (opt == 0)
+        {
+            arr.erase(arr.begin() + (id - 1));
+
+            for (int i = 0; i < alma; i++)
+            {
+                arr[i].id-=1;
+            }
+            alma--;
+        }
+
+    }
+    cout << "\nQuieres eliminar a otro alumno? (Si = 0) (No = Otro numero.)\n->";
+    cin >> opcion;
+    } while (opcion == 0);
+}
