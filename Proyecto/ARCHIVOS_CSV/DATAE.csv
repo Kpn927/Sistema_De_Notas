@@ -1,4 +1,4 @@
-id,nombre,apellido,genero,email,seccion,matematicas,sociales,biologia,educacion_fisica,artes
+id,nombre,apellido,email,genero,seccion,matematicas,sociales,biologia,educacion_fisica,artes
 1,Fidelia,Congram,fcongram0@pinterest.com,Female,C,11,12,18,2,17
 2,Amie,Shaw,ashaw1@nasa.gov,Female,B,3,4,3,6,10
 3,Jammal,Peret,jperet2@mapy.cz,Male,E,5,6,12,12,11
